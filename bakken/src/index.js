@@ -7,9 +7,13 @@ require("./database");
 
 app.set("port", 4000);
 
-// app.use(morgan('dev'))
+app.use(morgan("dev"));
 // app.use(bobyParse.urlencoded({extended:true}))
 // app.use(bobyParse.json())
+
+// routers
+
+app.use("/api/", require("./routers/prueba.routres"));
 
 //start server
 app.listen(app.get("port"), () => {
